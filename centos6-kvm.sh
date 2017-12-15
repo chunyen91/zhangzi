@@ -513,7 +513,7 @@ yum -y install bmon
 # download script
 cd
 cd /usr/bin
-wget -O menu.tar.gz "http://aliyahaura.tk:81/debian/menu/menu.tar.gz"
+wget -O menu.tar.gz "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/menu.tar.gz"
 tar -xvf menu.tar.gz
 rm -f menu.tar.gz
 

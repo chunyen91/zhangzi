@@ -489,9 +489,9 @@ yum -y install bmon
 
 # download script
 cd
-wget https://kopet88.ml/centos6/install-premiumscript.sh 
-chmod +x install-premiumscript.sh
-./install-premiumscript.sh
+wget -O menu.tar.gz "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/menu.tar.gz"
+tar -xvf menu.tar.gz
+rm -f menu.tar.gz
 
 # cron
 service crond start

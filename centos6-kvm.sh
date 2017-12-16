@@ -513,9 +513,42 @@ yum -y install bmon
 # download script
 cd
 cd /usr/bin
-wget -O menu.tar.gz "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/menu.tar.gz"
-tar -xvf menu.tar.gz
-rm -f menu.tar.gz
+wget -O /usr/bin/user-trial "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/user-trial"
+wget -O /usr/bin/rubah-tanggal "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/rubah-tanggal"
+wget -O /usr/bin/next "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/next"
+wget -O /usr/bin/auto-reboot "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/auto-reboot"
+wget -O /usr/bin/bench-network "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/bench-network"
+wget -O /usr/bin/speedtest "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/speedtest"
+wget -O /usr/bin/ps-mem "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/ps-mem"
+wget -O /usr/bin/autokill "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/autokill"
+wget -O /usr/bin/dropmon "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/dropmon"
+wget -O /usr/bin/menu "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/menu"
+wget -O /usr/bin/user-active-list "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/user-active-list"
+wget -O /usr/bin/user-add "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/user-add"
+wget -O /usr/bin/user-add-pptp "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/user-add-pptp"
+wget -O /usr/bin/user-del "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/user-del"
+wget -O /usr/bin/disable-user-expire "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/disable-user-expire"
+wget -O /usr/bin/delete-user-expire "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/delete-user-expire"
+wget -O /usr/bin/banned-user "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/banned-user"
+wget -O /usr/bin/unbanned-user "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/unbanned-user"
+wget -O /usr/bin/user-expire-list "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/user-expire-list"
+wget -O /usr/bin/user-gen "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/user-gen"
+wget -O /usr/bin/userlimit.sh "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/userlimit.sh"
+#wget -O /usr/bin/userlimitssh.sh "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/userlimitssh.sh"
+wget -O /usr/bin/user-list "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/user-list"
+wget -O /usr/bin/user-login "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/user-login"
+wget -O /usr/bin/user-pass "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/user-pass"
+wget -O /usr/bin/user-renew "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/user-renew"
+wget -O /usr/bin/clearcache.sh "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/clearcache.sh"
+wget -O /usr/bin/bannermenu "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/bannermenu"
+wget -O /usr/bin/menu-update-script-vps.sh "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/menu-update-script-vps.sh"
+cd
+# cronjob
+echo "*/30 * * * * root service dropbear restart" > /etc/cron.d/dropbear
+echo "00 23 * * * root /usr/bin/disable-user-expire" > /etc/cron.d/disable-user-expire
+echo "0 */12 * * * root /sbin/reboot" > /etc/cron.d/reboot
+echo "00 01 * * * root echo 3 > /proc/sys/vm/drop_caches && swapoff -a && swapon -a" > /etc/cron.d/clearcacheram3swap
+echo "*/3 * * * * root /usr/bin/clearcache.sh" > /etc/cron.d/clearcache1
 
 cd
 chmod +x /usr/bin/user-trial

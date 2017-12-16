@@ -18,7 +18,7 @@ fi
 echo "------------------------ MEMBUAT AKUN SSH ------------------------"
 
 
-	echo "           DEVELOPED BY ALIYA HAURA atau (089697708638)           " 
+	echo "           DEVELOPED BY ZHANGZI atau (60146309176)           " 
 echo ""
 
 read -p "Isikan username: " username
@@ -59,7 +59,7 @@ echo -e "   CARDING-CRIMINAL CYBER.                 "
 echo -e "===========================================" 
 echo -e "   Script by ARIF-SSH             "
 echo -e "   Config OVPN:                            "
-echo -e "   http://$MYIP:81/client.ovpn        " 
+echo -e "   http://$MYIP:85/client.ovpn        " 
 echo -e "-------------------------------------------" 
 echo -e ""
 echo -e ""

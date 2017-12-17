@@ -508,11 +508,15 @@ sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.d/rc.local
 iptables-restore < /etc/iptables.up.rules
 
 # pasang bmon
-yum -y install bmon
+if [ "$OS" == "x86_64" ]; then
+  wget -O /usr/bin/bmon "https://raw.github.com/arieonline/autoscript/master/conf/bmon64"
+else
+  wget -O /usr/bin/bmon "https://raw.github.com/arieonline/autoscript/master/conf/bmon"
+fi
+chmod +x /usr/bin/bmon
 
 # download script
 cd
-cd /usr/bin
 wget -O /usr/bin/user-trial "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/user-trial"
 wget -O /usr/bin/rubah-tanggal "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/rubah-tanggal"
 wget -O /usr/bin/next "https://raw.githubusercontent.com/cobrasta25/zhangzi/master/next"
